@@ -17,7 +17,7 @@ public class Post_endpoints {
 	
 	public static Response postPost (PostPojo payload) {
 		
-		String url = getURL().getString("postEndpoint");
+		String url = getURL().getString("postsEndpoint");
 		String userToken = getURL().getString("token");
 		System.out.println("Post using this as Request Body....\n");
 		System.out.println(payload);
@@ -31,6 +31,21 @@ public class Post_endpoints {
 			.body(payload)
 		.when()
 			.post(url);
+		
+		return res;
+	}
+	
+	public static Response postGetById (int id) {
+		
+		String url = getURL().getString("postsEndpoint");
+		String userToken = getURL().getString("token");
+		System.out.println("GET by ID using this as Request Body....\n");
+		
+		Response res = 
+		given()
+			.auth().oauth2(userToken)
+		.when()
+			.get(url + "/" + id);
 		
 		return res;
 	}
