@@ -47,6 +47,19 @@ public class User_endpoints {
 		return res;
 	}
 	
+	public static Response getusers_forOtherep() {
+		String url = getURL().getString("usersEndpoint");
+		String userToken = getURL().getString("token");
+		System.out.println("Get User by ID ....\n");
+		
+		Response res = given()
+			.auth().oauth2(userToken)
+		.when()
+			.get(url);
+		
+		return res;
+	}
+	
 	public static List<UserPojo> getUserOneParam (String param, String value) {
 		String url = getURL().getString("usersEndpoint");
 		String userToken = getURL().getString("token");
