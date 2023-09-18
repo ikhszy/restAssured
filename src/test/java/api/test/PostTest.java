@@ -10,6 +10,7 @@ import com.github.javafaker.Faker;
 import api.endpoints.Post_endpoints;
 import api.endpoints.User_endpoints;
 import api.payload.PostPojo;
+import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
@@ -37,6 +38,8 @@ public class PostTest {
 		
 		pPojo.setBody(faker.shakespeare().kingRichardIIIQuote().toLowerCase().trim());
 		pPojo.setTitle(faker.book().title().toLowerCase().trim());
+		
+		RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
 	}
 	
 	@Test(priority=1, description="POST on post")
@@ -71,6 +74,39 @@ public class PostTest {
 		} else {
 			Assert.fail(response.getBody().toString());
 		}
+	}
+	
+	@Test(priority=3, description="PUT post by Id")
+	public void PST003() {
 		
+		pPojo.setTitle(faker.book().title());
+		pPojo.setBody(faker.shakespeare().romeoAndJulietQuote());
+		
+		Response response = Post_endpoints.postPutById(pPojo, this.pPojo.getId());
+		JsonPath jp = response.jsonPath();
+		
+		int postId = jp.getInt("id");
+		
+		if(response.getStatusCode() == 200
+				&& postId == this.pPojo.getId()) {
+			Assert.assertTrue(true);
+			System.out.println("\nUser Detail: " + response.asPrettyString());
+		} else if(response.getStatusCode() != 200) {
+			Assert.fail("Status code = " + response.getStatusCode());
+		} else {
+			Assert.fail(response.getBody().toString());
+		}
+	}
+	
+	@Test(priority=4, description="DELETE post by Id")
+	public void PST004() {
+		
+		Response response = Post_endpoints.postDeleteById(this.pPojo.getId());
+		
+		if(response.getStatusCode() == 204) {
+			Assert.assertTrue(true);
+		} else{
+			Assert.fail(response.then().log().all().toString());
+		}
 	}
 }

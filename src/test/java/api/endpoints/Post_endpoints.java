@@ -49,4 +49,33 @@ public class Post_endpoints {
 		
 		return res;
 	}
+	
+	public static Response postPutById (PostPojo payload, int id) {
+		String url = getURL().getString("postsEndpoint");
+		String userToken = getURL().getString("token");
+		
+		Response res = 
+		given()
+			.auth().oauth2(userToken)
+			.contentType(ContentType.JSON)
+			.accept(ContentType.JSON)
+			.body(payload)
+		.when()
+			.put(url + "/" + id);
+		
+		return res;
+	}
+	
+	public static Response postDeleteById(int id) {
+		String url = getURL().getString("postsEndpoint");
+		String userToken = getURL().getString("token");
+		
+		Response res = 
+		given()
+			.auth().oauth2(userToken)
+		.when()
+			.delete(url + "/" + id);
+		
+		return res;
+	}
 }
