@@ -2,6 +2,8 @@ package api.endpoints;
 
 import static io.restassured.RestAssured.given;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import api.payload.PostPojo;
@@ -39,7 +41,7 @@ public class Post_endpoints {
 		
 		String url = getURL().getString("postsEndpoint");
 		String userToken = getURL().getString("token");
-		System.out.println("GET by ID using this as Request Body....\n");
+		System.out.println("GET by ID using this id: " + id + "\n");
 		
 		Response res = 
 		given()
@@ -69,6 +71,7 @@ public class Post_endpoints {
 	public static Response postDeleteById(int id) {
 		String url = getURL().getString("postsEndpoint");
 		String userToken = getURL().getString("token");
+		System.out.println("Deleting this id: " + id + "\n");
 		
 		Response res = 
 		given()
@@ -77,5 +80,40 @@ public class Post_endpoints {
 			.delete(url + "/" + id);
 		
 		return res;
+	}
+	
+	public static List<PostPojo> getPostOneParam (String param, int value) {
+		String url = getURL().getString("postsEndpoint");
+		String userToken = getURL().getString("token");
+		System.out.println("Filter post by " + param +" ....\n");
+		
+		return Arrays.asList(given()
+			.auth().oauth2(userToken)
+			.and()
+			.queryParam(param, value)
+		.when()
+			.get(url)
+		.then()
+			.statusCode(200)
+			.extract()
+			.response()
+			.body()
+			.as(PostPojo[].class));
+	}
+	
+	public static List<PostPojo> getAllPost() {
+		String url = getURL().getString("postsEndpoint");
+		String userToken = getURL().getString("token");
+		System.out.println("Get all post ....\n");
+		
+		return Arrays.asList(given()
+				.auth().oauth2(userToken)
+				.when()
+				.get(url)
+				.then()
+				.extract()
+				.response()
+				.body()
+				.as(PostPojo[].class));
 	}
 }
