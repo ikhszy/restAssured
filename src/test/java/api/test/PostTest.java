@@ -1,5 +1,7 @@
 package api.test;
 
+import java.util.List;
+
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -68,7 +70,7 @@ public class PostTest {
 		if(response.getStatusCode() == 200
 				&& postId == this.pPojo.getId()) {
 			Assert.assertTrue(true);
-			System.out.println("\nUser Detail: " + response.asPrettyString());
+			System.out.println("\nGET by ID detail: " + response.asPrettyString());
 		} else if(response.getStatusCode() != 200) {
 			Assert.fail("Status code = " + response.getStatusCode());
 		} else {
@@ -90,7 +92,7 @@ public class PostTest {
 		if(response.getStatusCode() == 200
 				&& postId == this.pPojo.getId()) {
 			Assert.assertTrue(true);
-			System.out.println("\nUser Detail: " + response.asPrettyString());
+			System.out.println("\nPUT detail: " + response.asPrettyString());
 		} else if(response.getStatusCode() != 200) {
 			Assert.fail("Status code = " + response.getStatusCode());
 		} else {
@@ -98,8 +100,40 @@ public class PostTest {
 		}
 	}
 	
-	@Test(priority=4, description="DELETE post by Id")
+	
+	@Test(priority=4, description="Get first 10 post and return the title")
 	public void PST004() {
+		String compare = this.pPojo.getTitle();
+		List<PostPojo> response = Post_endpoints.getAllPost();
+		int listCount = response.size();
+		
+		System.out.println("total entries: " + listCount);
+		
+		for(int i = 0; i < listCount; i++) {
+			if(response.get(i).getTitle().toString().equals(compare)) {
+				Assert.assertTrue(true);
+				System.out.println("FOUND IT: " + response.get(i).getTitle().toString());
+			} else {
+				System.out.println(response.get(i).getTitle());
+			}
+		}
+	}
+	
+	@Test(priority=5, description="Search post by user_id")
+	public void PST005() {
+		List<PostPojo> response = Post_endpoints.getPostOneParam("user_id", this.pPojo.getUser_id());
+		int listCount = response.size();
+		
+		System.out.println("total data: " + listCount);
+		
+		for(PostPojo uId : response) {
+			System.out.println("found user_id: " + uId.getUser_id() + " \ntitle: " + uId.getTitle());
+			System.out.println();
+		}
+	}
+	
+	@Test(priority=100, description="DELETE post by Id")
+	public void PST006() {
 		
 		Response response = Post_endpoints.postDeleteById(this.pPojo.getId());
 		
@@ -109,4 +143,5 @@ public class PostTest {
 			Assert.fail(response.then().log().all().toString());
 		}
 	}
+	
 }

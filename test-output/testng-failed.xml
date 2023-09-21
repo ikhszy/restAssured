@@ -5,8 +5,8 @@
     <classes>
       <class name="api.test.PostTest">
         <methods>
-          <include name="PST004"/>
           <include name="setup"/>
+          <include name="PST006"/>
         </methods>
       </class> <!-- api.test.PostTest -->
     </classes>
