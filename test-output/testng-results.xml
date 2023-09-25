@@ -1,33 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="19" passed="19" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-25T10:13:08 WIB" name="Default suite" finished-at="2023-09-25T10:13:15 WIB" duration-ms="7102">
+  <suite started-at="2023-09-25T14:08:23 WIB" name="Suite" finished-at="2023-09-25T14:08:44 WIB" duration-ms="21162">
     <groups>
     </groups>
-    <test started-at="2023-09-25T10:13:08 WIB" name="Default test" finished-at="2023-09-25T10:13:15 WIB" duration-ms="7102">
+    <test started-at="2023-09-25T14:08:23 WIB" name="goRest.co.in" finished-at="2023-09-25T14:08:44 WIB" duration-ms="21162">
       <class name="api.test.CommentTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:api.test.CommentTest@2a65fe7c]" started-at="2023-09-25T10:13:08 WIB" name="setup" finished-at="2023-09-25T10:13:12 WIB" duration-ms="3834" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:api.test.CommentTest@1aafa419]" started-at="2023-09-25T14:08:40 WIB" name="setup" finished-at="2023-09-25T14:08:41 WIB" duration-ms="802" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="CMT001()[pri:1, instance:api.test.CommentTest@2a65fe7c]" started-at="2023-09-25T10:13:12 WIB" name="CMT001" finished-at="2023-09-25T10:13:13 WIB" duration-ms="982" status="PASS">
+        <test-method signature="CMT001()[pri:1, instance:api.test.CommentTest@1aafa419]" started-at="2023-09-25T14:08:41 WIB" name="CMT001" description="POST new comment" finished-at="2023-09-25T14:08:42 WIB" duration-ms="704" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CMT001 -->
-        <test-method signature="CMT002()[pri:2, instance:api.test.CommentTest@2a65fe7c]" started-at="2023-09-25T10:13:13 WIB" name="CMT002" finished-at="2023-09-25T10:13:14 WIB" duration-ms="622" status="PASS">
+        <test-method signature="CMT002()[pri:2, instance:api.test.CommentTest@1aafa419]" started-at="2023-09-25T14:08:42 WIB" name="CMT002" description="GET new comment by id" finished-at="2023-09-25T14:08:42 WIB" duration-ms="602" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CMT002 -->
-        <test-method signature="CMT003()[pri:3, instance:api.test.CommentTest@2a65fe7c]" started-at="2023-09-25T10:13:14 WIB" name="CMT003" finished-at="2023-09-25T10:13:14 WIB" duration-ms="666" status="PASS">
+        <test-method signature="CMT003()[pri:3, instance:api.test.CommentTest@1aafa419]" started-at="2023-09-25T14:08:42 WIB" name="CMT003" description="PUT new comment and change the name, email and body" finished-at="2023-09-25T14:08:43 WIB" duration-ms="786" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CMT003 -->
-        <test-method signature="CMT004()[pri:4, instance:api.test.CommentTest@2a65fe7c]" started-at="2023-09-25T10:13:14 WIB" name="CMT004" finished-at="2023-09-25T10:13:15 WIB" duration-ms="923" status="PASS">
+        <test-method signature="CMT005()[pri:4, instance:api.test.CommentTest@1aafa419]" started-at="2023-09-25T14:08:43 WIB" name="CMT005" description="Search comment by id" finished-at="2023-09-25T14:08:43 WIB" duration-ms="466" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CMT005 -->
+        <test-method signature="CMT004()[pri:5, instance:api.test.CommentTest@1aafa419]" started-at="2023-09-25T14:08:43 WIB" name="CMT004" description="DELETE the session comment" finished-at="2023-09-25T14:08:44 WIB" duration-ms="914" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CMT004 -->
       </class> <!-- api.test.CommentTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="api.test.UserTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:api.test.UserTest@128d2484]" started-at="2023-09-25T14:08:24 WIB" name="setup" finished-at="2023-09-25T14:08:24 WIB" duration-ms="354" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="USR001()[pri:1, instance:api.test.UserTest@128d2484]" started-at="2023-09-25T14:08:24 WIB" name="USR001" description="Post new user" finished-at="2023-09-25T14:08:29 WIB" duration-ms="4751" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- USR001 -->
+        <test-method signature="USR002()[pri:2, instance:api.test.UserTest@128d2484]" started-at="2023-09-25T14:08:29 WIB" name="USR002" description="Get user by ID" finished-at="2023-09-25T14:08:30 WIB" duration-ms="686" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- USR002 -->
+        <test-method signature="USR003(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:api.test.UserTest@128d2484]" started-at="2023-09-25T14:08:32 WIB" name="USR003" description="PUT user using Data Driven Method" data-provider="data" finished-at="2023-09-25T14:08:32 WIB" duration-ms="708" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Ryu]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ryu.muhammad_1@gomail.co.id]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[male]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[active]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- USR003 -->
+        <test-method signature="USR003(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:api.test.UserTest@128d2484]" started-at="2023-09-25T14:08:32 WIB" name="USR003" description="PUT user using Data Driven Method" data-provider="data" finished-at="2023-09-25T14:08:33 WIB" duration-ms="690" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Ayumi]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ayumi.kareema_1@gomail.co.id]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[female]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[inactive]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- USR003 -->
+        <test-method signature="USR005()[pri:4, instance:api.test.UserTest@128d2484]" started-at="2023-09-25T14:08:33 WIB" name="USR005" description="Get all user and return the name" finished-at="2023-09-25T14:08:34 WIB" duration-ms="608" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- USR005 -->
+        <test-method signature="USR006()[pri:5, instance:api.test.UserTest@128d2484]" started-at="2023-09-25T14:08:34 WIB" name="USR006" description="Get all user by status limit to 20 data" finished-at="2023-09-25T14:08:34 WIB" duration-ms="751" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- USR006 -->
+        <test-method signature="USR007()[pri:6, instance:api.test.UserTest@128d2484]" started-at="2023-09-25T14:08:34 WIB" name="USR007" description="Search user by name" finished-at="2023-09-25T14:08:35 WIB" duration-ms="595" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- USR007 -->
+        <test-method signature="USR004()[pri:7, instance:api.test.UserTest@128d2484]" started-at="2023-09-25T14:08:35 WIB" name="USR004" description="Delete user" finished-at="2023-09-25T14:08:35 WIB" duration-ms="403" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- USR004 -->
+      </class> <!-- api.test.UserTest -->
+      <class name="api.test.PostTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:api.test.PostTest@a1153bc]" started-at="2023-09-25T14:08:35 WIB" name="setup" finished-at="2023-09-25T14:08:36 WIB" duration-ms="729" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="PST001()[pri:1, instance:api.test.PostTest@a1153bc]" started-at="2023-09-25T14:08:36 WIB" name="PST001" description="POST on post" finished-at="2023-09-25T14:08:37 WIB" duration-ms="789" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PST001 -->
+        <test-method signature="PST002()[pri:2, instance:api.test.PostTest@a1153bc]" started-at="2023-09-25T14:08:37 WIB" name="PST002" description="GET post by ID" finished-at="2023-09-25T14:08:38 WIB" duration-ms="617" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PST002 -->
+        <test-method signature="PST003()[pri:3, instance:api.test.PostTest@a1153bc]" started-at="2023-09-25T14:08:38 WIB" name="PST003" description="PUT post by Id" finished-at="2023-09-25T14:08:38 WIB" duration-ms="616" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PST003 -->
+        <test-method signature="PST004()[pri:4, instance:api.test.PostTest@a1153bc]" started-at="2023-09-25T14:08:38 WIB" name="PST004" description="Get first 10 post and return the title" finished-at="2023-09-25T14:08:39 WIB" duration-ms="548" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PST004 -->
+        <test-method signature="PST005()[pri:5, instance:api.test.PostTest@a1153bc]" started-at="2023-09-25T14:08:39 WIB" name="PST005" description="Search post by user_id" finished-at="2023-09-25T14:08:39 WIB" duration-ms="634" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PST005 -->
+        <test-method signature="PST006()[pri:100, instance:api.test.PostTest@a1153bc]" started-at="2023-09-25T14:08:39 WIB" name="PST006" description="DELETE post by Id" finished-at="2023-09-25T14:08:40 WIB" duration-ms="621" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PST006 -->
+      </class> <!-- api.test.PostTest -->
+    </test> <!-- goRest.co.in -->
+  </suite> <!-- Suite -->
 </testng-results>
