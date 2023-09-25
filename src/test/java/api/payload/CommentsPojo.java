@@ -1,11 +1,18 @@
 package api.payload;
 
 public class CommentsPojo {
+	int id;
 	int post_id;
 	String name;
 	String email;
 	String body;
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public int getPost_id() {
 		return post_id;
 	}
@@ -30,6 +37,4 @@ public class CommentsPojo {
 	public void setBody(String body) {
 		this.body = body;
 	}
-	
-	
 }

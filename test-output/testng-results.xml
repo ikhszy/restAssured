@@ -1,41 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-21T12:01:15 WIB" name="Default suite" finished-at="2023-09-21T12:01:26 WIB" duration-ms="10341">
+  <suite started-at="2023-09-25T10:13:08 WIB" name="Default suite" finished-at="2023-09-25T10:13:15 WIB" duration-ms="7102">
     <groups>
     </groups>
-    <test started-at="2023-09-21T12:01:15 WIB" name="Default test" finished-at="2023-09-21T12:01:26 WIB" duration-ms="10341">
-      <class name="api.test.PostTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:api.test.PostTest@799f10e1]" started-at="2023-09-21T12:01:15 WIB" name="setup" finished-at="2023-09-21T12:01:21 WIB" duration-ms="5391" status="PASS">
+    <test started-at="2023-09-25T10:13:08 WIB" name="Default test" finished-at="2023-09-25T10:13:15 WIB" duration-ms="7102">
+      <class name="api.test.CommentTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:api.test.CommentTest@2a65fe7c]" started-at="2023-09-25T10:13:08 WIB" name="setup" finished-at="2023-09-25T10:13:12 WIB" duration-ms="3834" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="PST001()[pri:1, instance:api.test.PostTest@799f10e1]" started-at="2023-09-21T12:01:21 WIB" name="PST001" description="POST on post" finished-at="2023-09-21T12:01:22 WIB" duration-ms="1226" status="PASS">
+        <test-method signature="CMT001()[pri:1, instance:api.test.CommentTest@2a65fe7c]" started-at="2023-09-25T10:13:12 WIB" name="CMT001" finished-at="2023-09-25T10:13:13 WIB" duration-ms="982" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PST001 -->
-        <test-method signature="PST002()[pri:2, instance:api.test.PostTest@799f10e1]" started-at="2023-09-21T12:01:22 WIB" name="PST002" description="GET post by ID" finished-at="2023-09-21T12:01:23 WIB" duration-ms="839" status="PASS">
+        </test-method> <!-- CMT001 -->
+        <test-method signature="CMT002()[pri:2, instance:api.test.CommentTest@2a65fe7c]" started-at="2023-09-25T10:13:13 WIB" name="CMT002" finished-at="2023-09-25T10:13:14 WIB" duration-ms="622" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PST002 -->
-        <test-method signature="PST003()[pri:3, instance:api.test.PostTest@799f10e1]" started-at="2023-09-21T12:01:23 WIB" name="PST003" description="PUT post by Id" finished-at="2023-09-21T12:01:23 WIB" duration-ms="603" status="PASS">
+        </test-method> <!-- CMT002 -->
+        <test-method signature="CMT003()[pri:3, instance:api.test.CommentTest@2a65fe7c]" started-at="2023-09-25T10:13:14 WIB" name="CMT003" finished-at="2023-09-25T10:13:14 WIB" duration-ms="666" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PST003 -->
-        <test-method signature="PST004()[pri:4, instance:api.test.PostTest@799f10e1]" started-at="2023-09-21T12:01:23 WIB" name="PST004" description="Get first 10 post and return the title" finished-at="2023-09-21T12:01:24 WIB" duration-ms="959" status="PASS">
+        </test-method> <!-- CMT003 -->
+        <test-method signature="CMT004()[pri:4, instance:api.test.CommentTest@2a65fe7c]" started-at="2023-09-25T10:13:14 WIB" name="CMT004" finished-at="2023-09-25T10:13:15 WIB" duration-ms="923" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PST004 -->
-        <test-method signature="PST005()[pri:5, instance:api.test.PostTest@799f10e1]" started-at="2023-09-21T12:01:24 WIB" name="PST005" description="Search post by user_id" finished-at="2023-09-21T12:01:25 WIB" duration-ms="667" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- PST005 -->
-        <test-method signature="PST006()[pri:100, instance:api.test.PostTest@799f10e1]" started-at="2023-09-21T12:01:25 WIB" name="PST006" description="DELETE post by Id" finished-at="2023-09-21T12:01:26 WIB" duration-ms="582" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- PST006 -->
-      </class> <!-- api.test.PostTest -->
+        </test-method> <!-- CMT004 -->
+      </class> <!-- api.test.CommentTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

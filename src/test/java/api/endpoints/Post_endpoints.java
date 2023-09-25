@@ -116,4 +116,18 @@ public class Post_endpoints {
 				.body()
 				.as(PostPojo[].class));
 	}
+	
+public static Response getPostIdForOthers() {
+		
+		String url = getURL().getString("postsEndpoint");
+		String userToken = getURL().getString("token");
+		
+		Response res = 
+		given()
+			.auth().oauth2(userToken)
+		.when()
+			.get(url);
+		
+		return res;
+	}
 }

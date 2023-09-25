@@ -19,8 +19,7 @@ public class Comment_endpoints {
 		
 		String url = getURL().getString("commentsEndpoint");
 		String userToken = getURL().getString("token");
-		System.out.println("Posting Comments using this as Request Body....\n");
-		System.out.println(payload);
+		System.out.println("POST Comments \n");
 		
 		
 		Response res = 
@@ -33,5 +32,53 @@ public class Comment_endpoints {
 			.post(url);
 		
 		return res;
+	}
+	
+	public static Response getCommentById (int id) {
+
+		String url = getURL().getString("commentsEndpoint");
+		String userToken = getURL().getString("token");
+		System.out.println("GET Comments By ID \n");
+		
+		Response res = 
+		given()
+			.auth().oauth2(userToken)
+		.when()
+			.get(url + "/" + id);
+		
+		return res;
+	}
+	
+	public static Response putCommentById (CommentsPojo payload, int id) {
+		
+		String url = getURL().getString("commentsEndpoint");
+		String userToken = getURL().getString("token");
+		System.out.println("PUT Comments \n");
+		
+
+		Response res = 
+		given()
+			.auth().oauth2(userToken)
+			.contentType(ContentType.JSON)
+			.accept(ContentType.JSON)
+			.body(payload)
+		.when()
+			.put(url + "/" + id);
+		
+		return res;
+	}
+	
+	public static Response deleteCommentById(int id) {
+		String url = getURL().getString("commentsEndpoint");
+		String userToken = getURL().getString("token");
+		System.out.println("DELETE Comments \n");
+		
+		Response res = 
+				given()
+					.auth().oauth2(userToken)
+				.when()
+					.delete(url + "/" + id);
+				
+				return res;
 	}
 }
