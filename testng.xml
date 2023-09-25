@@ -10,6 +10,8 @@
   <test thread-count="5" name="goRest.co.in">
     <classes>
       <class name="api.test.UserTest"/>
+      <class name="api.test.PostTest"/>
+      <class name="api.test.CommentTest"/>
     </classes>
   </test> <!-- PetTest -->
 </suite> <!-- Suite -->
