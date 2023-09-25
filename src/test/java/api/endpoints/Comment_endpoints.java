@@ -2,6 +2,8 @@ package api.endpoints;
 
 import static io.restassured.RestAssured.given;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import api.payload.CommentsPojo;
@@ -80,5 +82,24 @@ public class Comment_endpoints {
 					.delete(url + "/" + id);
 				
 				return res;
+	}
+	
+	public static List<CommentsPojo> searchCommentsWithInt (String param, int value) {
+		String url = getURL().getString("commentsEndpoint");
+		String userToken = getURL().getString("token");
+		System.out.println("Filter post by " + param +" ....\n");
+		
+		return Arrays.asList(given()
+			.auth().oauth2(userToken)
+			.and()
+			.queryParam(param, value)
+		.when()
+			.get(url)
+		.then()
+			.statusCode(200)
+			.extract()
+			.response()
+			.body()
+			.as(CommentsPojo[].class));
 	}
 }

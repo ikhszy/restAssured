@@ -1,5 +1,7 @@
 package api.test;
 
+import java.util.List;
+
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -35,7 +37,7 @@ public class CommentTest {
 		
 	}
 	
-	@Test(priority = 1)
+	@Test(priority = 1, description="POST new comment")
 	public void CMT001() {
 		Response resp = Comment_endpoints.postComment(commentPayload);
 		
@@ -52,7 +54,7 @@ public class CommentTest {
 		}
 	}
 	
-	@Test(priority = 2)
+	@Test(priority = 2, description="GET new comment by id")
 	public void CMT002() {
 		
 		Response resp = Comment_endpoints.getCommentById(this.commentPayload.getId());
@@ -69,7 +71,7 @@ public class CommentTest {
 		}
 	}
 	
-	@Test(priority = 3)
+	@Test(priority = 3, description="PUT new comment and change the name, email and body")
 	public void CMT003() {
 		
 		//set new text
@@ -92,7 +94,7 @@ public class CommentTest {
 		}
 	}
 	
-	@Test(priority = 4)
+	@Test(priority = 5, description="DELETE the session comment")
 	public void CMT004() {
 		
 		int cmtId = this.commentPayload.getId();
@@ -105,6 +107,18 @@ public class CommentTest {
 			System.out.println("comment Id: " + this.commentPayload.getId() + " successfully deleted");
 		} else {
 			Assert.fail(String.valueOf(getResp.getStatusCode()));
+		}
+	}
+	
+	@Test(priority=4, description="Search comment by id")
+	public void CMT005() {
+		List<CommentsPojo> response = Comment_endpoints.searchCommentsWithInt("id", this.commentPayload.getId());
+		int listCount = response.size();
+		
+		System.out.println("total data: " + listCount);
+		
+		for(CommentsPojo id : response) {
+			System.out.println("found comment with id: " + id.getId() + " \ntitle: " + id.getBody());
 		}
 	}
 }
