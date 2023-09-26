@@ -1,8 +1,5 @@
 package api.utilities;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -23,8 +20,7 @@ public class ExtentReportManager implements ITestListener{
 	
 	public void onStart(ITestContext testContext) {
 		
-		String timeStamp = new SimpleDateFormat("yyy.MM.dd.HH.mm.ss").format(new Date());
-		repName = "APITesting-"+timeStamp+".html";
+		repName = "goRest.html";
 		
 		sparkReporter = new ExtentSparkReporter(".\\reports\\" + repName);
 		
@@ -34,7 +30,7 @@ public class ExtentReportManager implements ITestListener{
 		
 		extent = new ExtentReports();
 		extent.attachReporter(sparkReporter);
-		extent.setSystemInfo("Application", "Pet Store API");
+		extent.setSystemInfo("Application", "goRest");
 		extent.setSystemInfo("Operating System", System.getProperty("os.name"));
 		extent.setSystemInfo("Environment", "QA");
 	}
