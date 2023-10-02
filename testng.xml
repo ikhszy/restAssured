@@ -12,6 +12,7 @@
       <class name="api.test.UserTest"/>
       <class name="api.test.PostTest"/>
       <class name="api.test.CommentTest"/>
+      <class name="api.test.End2end"/>
     </classes>
   </test> <!-- PetTest -->
 </suite> <!-- Suite -->
