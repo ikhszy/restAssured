@@ -3,12 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="api.test.CommentTest">
+      <class name="api.test.End2end">
         <methods>
+          <include name="e2e004"/>
           <include name="setup"/>
-          <include name="CMT003"/>
+          <include name="e2e005"/>
+          <include name="e2e003"/>
         </methods>
-      </class> <!-- api.test.CommentTest -->
+      </class> <!-- api.test.End2end -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

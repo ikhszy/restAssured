@@ -6,13 +6,19 @@
   </listeners>
   <test thread-count="5" name="goRest.co.in(failed)">
     <classes>
-      <class name="api.test.UserTest">
+      <class name="api.test.End2end">
         <methods>
-          <include name="setup"/>
-          <include name="USR001"/>
-          <include name="USR002"/>
+          <include name="e2e008" invocation-numbers="0 1"/>
+          <include name="e2e004"/>
+          <include name="e2e009"/>
+          <include name="e2e007"/>
+          <include name="e2e005"/>
+          <include name="e2e006"/>
+          <include name="e2e003"/>
+          <include name="e2e001"/>
+          <include name="e2e002"/>
         </methods>
-      </class> <!-- api.test.UserTest -->
+      </class> <!-- api.test.End2end -->
     </classes>
   </test> <!-- goRest.co.in(failed) -->
 </suite> <!-- Failed suite [Suite] -->
