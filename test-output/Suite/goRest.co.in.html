@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>goRest.co.in</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>19/10/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/27/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Oct 02 21:50:20 WIB 2023</td>
+<td>Started on:</td><td>Mon Oct 02 22:25:01 WIB 2023</td>
 </tr>
-<tr><td>Total time:</td><td>19 seconds (19905 ms)</td>
+<tr><td>Total time:</td><td>26 seconds (26320 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,42 +76,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='api.test.End2end.e2e001()'><b>e2e001</b><br>Test class: api.test.End2end<br>Test method: Post new user</td>
-<td><div><pre>java.lang.IllegalArgumentException: object cannot be null
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:58)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
-	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:54)
-	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
-	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:751)
-	at api.endpoints.User_endpoints.postUser(User_endpoints.java:30)
-	at api.test.End2end.e2e001(End2end.java:28)
+<td title='api.test.End2end.e2e006()'><b>e2e006</b><br>Test class: api.test.End2end<br>Test method: PUT post by Id</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1884542690", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1884542690'><pre>java.lang.IllegalArgumentException: object cannot be null
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
-	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:58)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
-	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:54)
-	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
-	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:751)
-	at api.endpoints.User_endpoints.postUser(User_endpoints.java:30)
-	at api.test.End2end.e2e001(End2end.java:28)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1401684813", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1401684813'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
 	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
@@ -136,36 +110,90 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
+<td>api.test.End2end@73a1e9a9</td></tr>
+<tr>
+<td title='api.test.PostTest.PST003()'><b>PST003</b><br>Test class: api.test.PostTest<br>Test method: PUT post by Id</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace67025210", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace67025210'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>api.test.PostTest@14cd1699</td></tr>
+<tr>
+<td title='api.test.End2end.e2e004()'><b>e2e004</b><br>Test class: api.test.End2end<br>Test method: PUT new comment and change the name, email and body</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace205315896", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace205315896'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>1</td>
 <td>api.test.End2end@73a1e9a9</td></tr>
 <tr>
 <td title='api.test.End2end.e2e003()'><b>e2e003</b><br>Test class: api.test.End2end<br>Test method: POST new comment</td>
-<td><div><pre>java.lang.IllegalArgumentException: object cannot be null
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
-	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
-	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:751)
-	at api.endpoints.Comment_endpoints.postComment(Comment_endpoints.java:32)
-	at api.test.End2end.e2e003(End2end.java:59)
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1608372476", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1608372476'><pre>java.lang.IllegalArgumentException: object cannot be null
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
-	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
-	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
-	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:751)
-	at api.endpoints.Comment_endpoints.postComment(Comment_endpoints.java:32)
-	at api.test.End2end.e2e003(End2end.java:59)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1741212175", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1741212175'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
 	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
@@ -189,20 +217,55 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>0</td>
+<td>1</td>
 <td>api.test.End2end@73a1e9a9</td></tr>
+<tr>
+<td title='api.test.UserTest.USR001()'><b>USR001</b><br>Test class: api.test.UserTest<br>Test method: Post new user</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1479450980", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1479450980'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>5</td>
+<td>api.test.UserTest@1aafa419</td></tr>
 <tr>
 <td title='api.test.End2end.e2e005()'><b>e2e005</b><br>Test class: api.test.End2end<br>Test method: DELETE the session comment</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;api.payload.CommentsPojo.getId()&quot; because &quot;this.commentPayload&quot; is null
-	at api.test.End2end.e2e005(End2end.java:100)
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1726310455", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1726310455'><pre>java.lang.NullPointerException: Cannot invoke &quot;api.payload.CommentsPojo.getId()&quot; because &quot;this.commentPayload&quot; is null
-	at api.test.End2end.e2e005(End2end.java:100)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace322183416", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace322183416'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
 	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
@@ -229,17 +292,16 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>api.test.End2end@73a1e9a9</td></tr>
 <tr>
-<td title='api.test.End2end.e2e006()'><b>e2e006</b><br>Test class: api.test.End2end<br>Test method: PUT post by Id</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;api.payload.PostPojo.setTitle(String)&quot; because &quot;this.postPayload&quot; is null
-	at api.test.End2end.e2e006(End2end.java:116)
+<td title='api.test.CommentTest.CMT005()'><b>CMT005</b><br>Test class: api.test.CommentTest<br>Test method: Search comment by id</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1366888443", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1366888443'><pre>java.lang.NullPointerException: Cannot invoke &quot;api.payload.PostPojo.setTitle(String)&quot; because &quot;this.postPayload&quot; is null
-	at api.test.End2end.e2e006(End2end.java:116)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1329066725", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1329066725'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
 	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
@@ -264,36 +326,54 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>api.test.End2end@73a1e9a9</td></tr>
+<td>api.test.CommentTest@77888435</td></tr>
+<tr>
+<td title='api.test.PostTest.PST002()'><b>PST002</b><br>Test class: api.test.PostTest<br>Test method: GET post by ID</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace270945456", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace270945456'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>api.test.PostTest@14cd1699</td></tr>
 <tr>
 <td title='api.test.End2end.e2e002()'><b>e2e002</b><br>Test class: api.test.End2end<br>Test method: POST on post</td>
-<td><div><pre>java.lang.IllegalArgumentException: object cannot be null
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
-	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
-	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:751)
-	at api.endpoints.Post_endpoints.postPost(Post_endpoints.java:33)
-	at api.test.End2end.e2e002(End2end.java:45)
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace875004964", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace875004964'><pre>java.lang.IllegalArgumentException: object cannot be null
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
-	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
-	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
-	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:751)
-	at api.endpoints.Post_endpoints.postPost(Post_endpoints.java:33)
-	at api.test.End2end.e2e002(End2end.java:45)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace266073741", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace266073741'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
 	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
@@ -320,17 +400,412 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>api.test.End2end@73a1e9a9</td></tr>
 <tr>
-<td title='api.test.End2end.e2e004()'><b>e2e004</b><br>Test class: api.test.End2end<br>Test method: PUT new comment and change the name, email and body</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;api.payload.CommentsPojo.setName(String)&quot; because &quot;this.commentPayload&quot; is null
-	at api.test.End2end.e2e004(End2end.java:79)
+<td title='api.test.PostTest.PST004()'><b>PST004</b><br>Test class: api.test.PostTest<br>Test method: Get first 10 post and return the title</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace843299175", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace843299175'><pre>java.lang.NullPointerException: Cannot invoke &quot;api.payload.CommentsPojo.setName(String)&quot; because &quot;this.commentPayload&quot; is null
-	at api.test.End2end.e2e004(End2end.java:79)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace774194879", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace774194879'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>1</td>
+<td>api.test.PostTest@14cd1699</td></tr>
+<tr>
+<td title='api.test.PostTest.PST005()'><b>PST005</b><br>Test class: api.test.PostTest<br>Test method: Search post by user_id</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2107660410", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2107660410'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>api.test.PostTest@14cd1699</td></tr>
+<tr>
+<td title='api.test.UserTest.USR002()'><b>USR002</b><br>Test class: api.test.UserTest<br>Test method: Get user by ID</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1937294500", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1937294500'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>api.test.UserTest@1aafa419</td></tr>
+<tr>
+<td title='api.test.CommentTest.CMT004()'><b>CMT004</b><br>Test class: api.test.CommentTest<br>Test method: DELETE the session comment</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1938912497", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1938912497'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>api.test.CommentTest@77888435</td></tr>
+<tr>
+<td title='api.test.CommentTest.CMT001()'><b>CMT001</b><br>Test class: api.test.CommentTest<br>Test method: POST new comment</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2135900971", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2135900971'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>api.test.CommentTest@77888435</td></tr>
+<tr>
+<td title='api.test.UserTest.USR006()'><b>USR006</b><br>Test class: api.test.UserTest<br>Test method: Get all user by status limit to 20 data</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1969754956", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1969754956'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>api.test.UserTest@1aafa419</td></tr>
+<tr>
+<td title='api.test.CommentTest.CMT003()'><b>CMT003</b><br>Test class: api.test.CommentTest<br>Test method: PUT new comment and change the name, email and body</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace646300578", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace646300578'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>api.test.CommentTest@77888435</td></tr>
+<tr>
+<td title='api.test.UserTest.USR003()'><b>USR003</b><br>Test class: api.test.UserTest<br>Test method: PUT user using Data Driven Method</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace760646911", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace760646911'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>2</td>
+<td>api.test.UserTest@1aafa419</td></tr>
+<tr>
+<td title='api.test.PostTest.PST006()'><b>PST006</b><br>Test class: api.test.PostTest<br>Test method: DELETE post by Id</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1247158141", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1247158141'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>api.test.PostTest@14cd1699</td></tr>
+<tr>
+<td title='api.test.UserTest.USR007()'><b>USR007</b><br>Test class: api.test.UserTest<br>Test method: Search user by name</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace691171870", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace691171870'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>api.test.UserTest@1aafa419</td></tr>
+<tr>
+<td title='api.test.PostTest.PST001()'><b>PST001</b><br>Test class: api.test.PostTest<br>Test method: POST on post</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1452603040", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1452603040'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>2</td>
+<td>api.test.PostTest@14cd1699</td></tr>
+<tr>
+<td title='api.test.End2end.e2e001()'><b>e2e001</b><br>Test class: api.test.End2end<br>Test method: Post new user</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1931451243", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1931451243'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
 	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
@@ -357,17 +832,16 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>api.test.End2end@73a1e9a9</td></tr>
 <tr>
-<td title='api.test.End2end.e2e008()'><b>e2e008</b><br>Test class: api.test.End2end<br>Test method: PUT user using Data Driven Method<br>Parameters: Ayumi, ayumi.kareema_1@gomail.co.id, female, inactive</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;api.payload.UserPojo.setName(String)&quot; because &quot;this.userPayload&quot; is null
-	at api.test.End2end.e2e008(End2end.java:149)
+<td title='api.test.CommentTest.CMT002()'><b>CMT002</b><br>Test class: api.test.CommentTest<br>Test method: GET new comment by id</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1120288370", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1120288370'><pre>java.lang.NullPointerException: Cannot invoke &quot;api.payload.UserPojo.setName(String)&quot; because &quot;this.userPayload&quot; is null
-	at api.test.End2end.e2e008(End2end.java:149)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1291890806", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1291890806'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
 	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
@@ -392,19 +866,54 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>api.test.End2end@73a1e9a9</td></tr>
+<td>api.test.CommentTest@77888435</td></tr>
+<tr>
+<td title='api.test.UserTest.USR004()'><b>USR004</b><br>Test class: api.test.UserTest<br>Test method: Delete user</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1159675750", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1159675750'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>api.test.UserTest@1aafa419</td></tr>
 <tr>
 <td title='api.test.End2end.e2e007()'><b>e2e007</b><br>Test class: api.test.End2end<br>Test method: DELETE post by Id</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;api.payload.PostPojo.getId()&quot; because &quot;this.postPayload&quot; is null
-	at api.test.End2end.e2e007(End2end.java:138)
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1617682801", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1617682801'><pre>java.lang.NullPointerException: Cannot invoke &quot;api.payload.PostPojo.getId()&quot; because &quot;this.postPayload&quot; is null
-	at api.test.End2end.e2e007(End2end.java:138)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1193082848", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1193082848'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
 	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
@@ -431,17 +940,52 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>api.test.End2end@73a1e9a9</td></tr>
 <tr>
-<td title='api.test.End2end.e2e008()'><b>e2e008</b><br>Test class: api.test.End2end<br>Test method: PUT user using Data Driven Method<br>Parameters: Ryu, ryu.muhammad_1@gomail.co.id, male, active</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;api.payload.UserPojo.setName(String)&quot; because &quot;this.userPayload&quot; is null
-	at api.test.End2end.e2e008(End2end.java:149)
+<td title='api.test.UserTest.USR005()'><b>USR005</b><br>Test class: api.test.UserTest<br>Test method: Get all user and return the name</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1016849905", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1016849905'><pre>java.lang.NullPointerException: Cannot invoke &quot;api.payload.UserPojo.setName(String)&quot; because &quot;this.userPayload&quot; is null
-	at api.test.End2end.e2e008(End2end.java:149)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1393182452", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1393182452'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>api.test.UserTest@1aafa419</td></tr>
+<tr>
+<td title='api.test.End2end.e2e008()'><b>e2e008</b><br>Test class: api.test.End2end<br>Test method: PUT user using Data Driven Method</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1065451454", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1065451454'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
 	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
@@ -469,16 +1013,15 @@ function toggleAllBoxes() {
 <td>api.test.End2end@73a1e9a9</td></tr>
 <tr>
 <td title='api.test.End2end.e2e009()'><b>e2e009</b><br>Test class: api.test.End2end<br>Test method: Delete user</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;api.payload.UserPojo.getId()&quot; because &quot;this.userPayload&quot; is null
-	at api.test.End2end.e2e009(End2end.java:184)
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace821459229", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace821459229'><pre>java.lang.NullPointerException: Cannot invoke &quot;api.payload.UserPojo.getId()&quot; because &quot;this.userPayload&quot; is null
-	at api.test.End2end.e2e009(End2end.java:184)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1687989795", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1687989795'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Throwable.getMessage()&quot; because the return value of &quot;org.testng.ITestResult.getThrowable()&quot; is null
+	at api.utilities.ExtentReportManager.onTestSuccess(ExtentReportManager.java:44)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:103)
+	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:277)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:757)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
 	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
@@ -504,110 +1047,6 @@ function toggleAllBoxes() {
 </pre></div></td>
 <td>0</td>
 <td>api.test.End2end@73a1e9a9</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='api.test.UserTest.USR003()'><b>USR003</b><br>Test class: api.test.UserTest<br>Test method: PUT user using Data Driven Method<br>Parameters: Ryu, ryu.muhammad_1@gomail.co.id, male, active</td>
-<td></td>
-<td>0</td>
-<td>api.test.UserTest@1aafa419</td></tr>
-<tr>
-<td title='api.test.UserTest.USR003()'><b>USR003</b><br>Test class: api.test.UserTest<br>Test method: PUT user using Data Driven Method<br>Parameters: Ayumi, ayumi.kareema_1@gomail.co.id, female, inactive</td>
-<td></td>
-<td>0</td>
-<td>api.test.UserTest@1aafa419</td></tr>
-<tr>
-<td title='api.test.PostTest.PST002()'><b>PST002</b><br>Test class: api.test.PostTest<br>Test method: GET post by ID</td>
-<td></td>
-<td>0</td>
-<td>api.test.PostTest@14cd1699</td></tr>
-<tr>
-<td title='api.test.PostTest.PST001()'><b>PST001</b><br>Test class: api.test.PostTest<br>Test method: POST on post</td>
-<td></td>
-<td>1</td>
-<td>api.test.PostTest@14cd1699</td></tr>
-<tr>
-<td title='api.test.PostTest.PST004()'><b>PST004</b><br>Test class: api.test.PostTest<br>Test method: Get first 10 post and return the title</td>
-<td></td>
-<td>0</td>
-<td>api.test.PostTest@14cd1699</td></tr>
-<tr>
-<td title='api.test.CommentTest.CMT005()'><b>CMT005</b><br>Test class: api.test.CommentTest<br>Test method: Search comment by id</td>
-<td></td>
-<td>0</td>
-<td>api.test.CommentTest@77888435</td></tr>
-<tr>
-<td title='api.test.PostTest.PST006()'><b>PST006</b><br>Test class: api.test.PostTest<br>Test method: DELETE post by Id</td>
-<td></td>
-<td>0</td>
-<td>api.test.PostTest@14cd1699</td></tr>
-<tr>
-<td title='api.test.PostTest.PST003()'><b>PST003</b><br>Test class: api.test.PostTest<br>Test method: PUT post by Id</td>
-<td></td>
-<td>0</td>
-<td>api.test.PostTest@14cd1699</td></tr>
-<tr>
-<td title='api.test.CommentTest.CMT001()'><b>CMT001</b><br>Test class: api.test.CommentTest<br>Test method: POST new comment</td>
-<td></td>
-<td>0</td>
-<td>api.test.CommentTest@77888435</td></tr>
-<tr>
-<td title='api.test.CommentTest.CMT002()'><b>CMT002</b><br>Test class: api.test.CommentTest<br>Test method: GET new comment by id</td>
-<td></td>
-<td>0</td>
-<td>api.test.CommentTest@77888435</td></tr>
-<tr>
-<td title='api.test.CommentTest.CMT004()'><b>CMT004</b><br>Test class: api.test.CommentTest<br>Test method: DELETE the session comment</td>
-<td></td>
-<td>0</td>
-<td>api.test.CommentTest@77888435</td></tr>
-<tr>
-<td title='api.test.UserTest.USR001()'><b>USR001</b><br>Test class: api.test.UserTest<br>Test method: Post new user</td>
-<td></td>
-<td>3</td>
-<td>api.test.UserTest@1aafa419</td></tr>
-<tr>
-<td title='api.test.UserTest.USR002()'><b>USR002</b><br>Test class: api.test.UserTest<br>Test method: Get user by ID</td>
-<td></td>
-<td>0</td>
-<td>api.test.UserTest@1aafa419</td></tr>
-<tr>
-<td title='api.test.UserTest.USR005()'><b>USR005</b><br>Test class: api.test.UserTest<br>Test method: Get all user and return the name</td>
-<td></td>
-<td>0</td>
-<td>api.test.UserTest@1aafa419</td></tr>
-<tr>
-<td title='api.test.UserTest.USR006()'><b>USR006</b><br>Test class: api.test.UserTest<br>Test method: Get all user by status limit to 20 data</td>
-<td></td>
-<td>0</td>
-<td>api.test.UserTest@1aafa419</td></tr>
-<tr>
-<td title='api.test.PostTest.PST005()'><b>PST005</b><br>Test class: api.test.PostTest<br>Test method: Search post by user_id</td>
-<td></td>
-<td>0</td>
-<td>api.test.PostTest@14cd1699</td></tr>
-<tr>
-<td title='api.test.UserTest.USR004()'><b>USR004</b><br>Test class: api.test.UserTest<br>Test method: Delete user</td>
-<td></td>
-<td>0</td>
-<td>api.test.UserTest@1aafa419</td></tr>
-<tr>
-<td title='api.test.UserTest.USR007()'><b>USR007</b><br>Test class: api.test.UserTest<br>Test method: Search user by name</td>
-<td></td>
-<td>0</td>
-<td>api.test.UserTest@1aafa419</td></tr>
-<tr>
-<td title='api.test.CommentTest.CMT003()'><b>CMT003</b><br>Test class: api.test.CommentTest<br>Test method: PUT new comment and change the name, email and body</td>
-<td></td>
-<td>0</td>
-<td>api.test.CommentTest@77888435</td></tr>
 </table><p>
 </body>
 </html>

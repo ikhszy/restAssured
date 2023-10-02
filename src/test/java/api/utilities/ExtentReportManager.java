@@ -25,7 +25,7 @@ public class ExtentReportManager implements ITestListener{
 		sparkReporter = new ExtentSparkReporter(".\\reports\\" + repName);
 		
 		sparkReporter.config().setDocumentTitle("RestAssured API");
-		sparkReporter.config().setReportName("Pet Store API");
+		sparkReporter.config().setReportName("goRest API");
 		sparkReporter.config().setTheme(Theme.DARK);
 		
 		extent = new ExtentReports();
