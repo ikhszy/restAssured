@@ -64,16 +64,13 @@ public class UserTest {
 		
 		int usrId = jp.getInt("id");
 		
-		if(response.getStatusCode() == 200
-				&& usrId == this.userPayload.getId()) {
-			Assert.assertTrue(true);
-			System.out.println("\nUser Detail: " + response.asPrettyString());
-		} else if(response.getStatusCode() != 200) {
+		if(response.getStatusCode() != 200) {
 			Assert.fail("Status code = " + response.getStatusCode());
+		} else if(usrId != this.userPayload.getId()) {
+			Assert.fail("user id is wrong = " + usrId);
 		} else {
-			Assert.fail(response.getBody().toString());
+			Assert.assertTrue(true);
 		}
-		
 	}
 	
 	@Test(priority=3, description="PUT user using Data Driven Method", dataProvider = "data", dataProviderClass = DataProviders.class)
@@ -91,24 +88,18 @@ public class UserTest {
 		String usrName = jp.getString("name");
 		String usrEmail = jp.getString("email");
 		
-		if(
-			response.getStatusCode() == 200 &&
-			usrId == this.userPayload.getId() &&
-			usrName != this.userPayload.getName() &&
-			usrEmail != this.userPayload.getEmail()) {
+		if(response.getStatusCode() != 200) {
+			Assert.fail("status code: " + response.getStatusCode());
+		} else if(usrId != this.userPayload.getId()) {
+			Assert.fail("id changed to: " + usrId);
+		} else if(usrName == this.userPayload.getName()) {
+			Assert.fail("name changed to: " + usrName);
+		} else if(usrEmail == this.userPayload.getEmail()) {
+			Assert.fail("email changed to: " + usrEmail);
+		} else {
 			Assert.assertTrue(true);
 			System.out.println("New entry: \n" + response.asPrettyString() + "\n");
-				} else if(response.getStatusCode() != 200) {
-					Assert.fail("status code: " + response.getStatusCode());
-				} else if(usrId != this.userPayload.getId()) {
-					Assert.fail("id changed to: " + usrId);
-				} else if(usrName == this.userPayload.getName()) {
-					Assert.fail("name changed to: " + usrName);
-				} else if(usrEmail == this.userPayload.getEmail()) {
-					Assert.fail("email changed to: " + usrEmail);
-				} else {
-					Assert.fail("check response:\n" + response.asPrettyString());
-				}
+		}
 	}
 	
 	@Test(priority=4, description="Get all user and return the name")

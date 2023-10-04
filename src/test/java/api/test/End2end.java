@@ -115,11 +115,19 @@ public class End2end {
 		
 		int cmtId = jp.get("id");
 		
-		if(resp.getStatusCode() == 200 && cmtId == this.commentPayload.getId()) {
+		if(resp.getStatusCode() != 200) {
+			Assert.fail("Status code = " + resp.getStatusCode());
+		} else if(cmtId != this.commentPayload.getId()) {
+			Assert.fail("wrong id: " + cmtId);
+		} else if(!resp.getBody().asPrettyString().contains(this.commentPayload.getName())) {
+			Assert.fail("Incorrect name = " + jp.get("name"));
+		} else if(!resp.getBody().asPrettyString().contains(this.commentPayload.getEmail())) {
+			Assert.fail("Incorrect name = " + jp.get("email"));
+		} else if(!resp.getBody().asPrettyString().contains(this.commentPayload.getBody())) {
+			Assert.fail("Incorrect name = " + jp.get("body"));
+		} else {
 			Assert.assertTrue(true);
 			System.out.println("Success with this as response: \n" + resp.getBody().asPrettyString());
-		} else {
-			Assert.fail(resp.getBody().asPrettyString());
 		}
 	}
 	
@@ -150,14 +158,15 @@ public class End2end {
 		
 		int postId = jp.getInt("id");
 		
-		if(response.getStatusCode() == 200
-				&& postId == this.postPayload.getId()) {
+		if(response.getStatusCode() != 200) {
+			Assert.fail("Status code is wrong: " + response.getStatusCode());
+		} else if(!response.getBody().asPrettyString().contains(this.postPayload.getTitle())) {
+			Assert.fail(response.getBody().asPrettyString());
+		} else if(postId != this.postPayload.getId()) {
+			Assert.fail("Post ID is wrong: " + postId);
+		} else {
 			Assert.assertTrue(true);
 			System.out.println("\nPUT detail: " + response.asPrettyString());
-		} else if(response.getStatusCode() != 200) {
-			Assert.fail("Status code = " + response.getStatusCode());
-		} else {
-			Assert.fail(response.getBody().toString());
 		}
 	}
 	
@@ -188,24 +197,18 @@ public class End2end {
 		String usrName = jp.getString("name");
 		String usrEmail = jp.getString("email");
 		
-		if(
-			response.getStatusCode() == 200 &&
-			usrId == this.userPayload.getId() &&
-			usrName != this.userPayload.getName() &&
-			usrEmail != this.userPayload.getEmail()) {
+		if(response.getStatusCode() != 200) {
+			Assert.fail("status code: " + response.getStatusCode());
+		} else if(usrId != this.userPayload.getId()) {
+			Assert.fail("id changed to: " + usrId);
+		} else if(usrName == this.userPayload.getName()) {
+			Assert.fail("name changed to: " + usrName);
+		} else if(usrEmail == this.userPayload.getEmail()) {
+			Assert.fail("email changed to: " + usrEmail);
+		} else {
 			Assert.assertTrue(true);
 			System.out.println("New entry: \n" + response.asPrettyString() + "\n");
-				} else if(response.getStatusCode() != 200) {
-					Assert.fail("status code: " + response.getStatusCode());
-				} else if(usrId != this.userPayload.getId()) {
-					Assert.fail("id changed to: " + usrId);
-				} else if(usrName == this.userPayload.getName()) {
-					Assert.fail("name changed to: " + usrName);
-				} else if(usrEmail == this.userPayload.getEmail()) {
-					Assert.fail("email changed to: " + usrEmail);
-				} else {
-					Assert.fail("check response:\n" + response.asPrettyString());
-				}
+		}
 	}
 	
 	@Test(priority=9, description="Delete user")

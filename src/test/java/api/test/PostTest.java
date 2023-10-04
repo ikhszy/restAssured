@@ -67,14 +67,12 @@ public class PostTest {
 		
 		int postId = jp.getInt("id");
 		
-		if(response.getStatusCode() == 200
-				&& postId == this.pPojo.getId()) {
-			Assert.assertTrue(true);
-			System.out.println("\nGET by ID detail: " + response.asPrettyString());
-		} else if(response.getStatusCode() != 200) {
-			Assert.fail("Status code = " + response.getStatusCode());
+		if(response.getStatusCode() != 200) {
+			Assert.fail("Status code is wrong: " + response.getStatusCode());
+		} else if(postId != this.pPojo.getId()) {
+			Assert.fail("Post ID is wrong: " + postId);
 		} else {
-			Assert.fail(response.getBody().toString());
+			Assert.assertTrue(true);
 		}
 	}
 	
@@ -89,14 +87,15 @@ public class PostTest {
 		
 		int postId = jp.getInt("id");
 		
-		if(response.getStatusCode() == 200
-				&& postId == this.pPojo.getId()) {
+		if(response.getStatusCode() != 200) {
+			Assert.fail("Status code is wrong: " + response.getStatusCode());
+		} else if(!response.getBody().asPrettyString().contains(this.pPojo.getTitle())) {
+			Assert.fail(response.getBody().asPrettyString());
+		} else if(postId != this.pPojo.getId()) {
+			Assert.fail("Post ID is wrong: " + postId);
+		} else {
 			Assert.assertTrue(true);
 			System.out.println("\nPUT detail: " + response.asPrettyString());
-		} else if(response.getStatusCode() != 200) {
-			Assert.fail("Status code = " + response.getStatusCode());
-		} else {
-			Assert.fail(response.getBody().toString());
 		}
 	}
 	
@@ -139,7 +138,7 @@ public class PostTest {
 		
 		if(response.getStatusCode() == 204) {
 			Assert.assertTrue(true);
-		} else{
+		} else {
 			Assert.fail(response.then().log().all().toString());
 		}
 	}
