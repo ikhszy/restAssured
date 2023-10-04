@@ -45,12 +45,13 @@ public class CommentTest {
 		
 		int post_id = jp.get("post_id");
 		
-		if(resp.getStatusCode() == 201 && post_id == commentPayload.getPost_id()) {
-			Assert.assertTrue(true);
-			System.out.println("Success with post_id: " + post_id);
-			commentPayload.setId(jp.getInt("id"));
+		if(resp.getStatusCode() != 201) {
+			Assert.fail("Status code = " + resp.getStatusCode());
+		} else if(post_id != commentPayload.getPost_id()) {
+			Assert.fail("wrong id: " + post_id);
 		} else {
-			Assert.fail(resp.asPrettyString());
+			Assert.assertTrue(true);
+			commentPayload.setId(jp.getInt("id"));
 		}
 	}
 	
@@ -61,13 +62,14 @@ public class CommentTest {
 		
 		JsonPath jp = resp.jsonPath();
 		
-		int cmtId = jp.get("id");
+		int cmtId = jp.getInt("id");
 		
-		if(resp.getStatusCode() == 200 && cmtId == this.commentPayload.getId()) {
-			Assert.assertTrue(true);
-			System.out.println("Success with this as response: \n" + resp.getBody().asPrettyString());
+		if(resp.getStatusCode() != 200) {
+			Assert.fail("Status code = " + resp.getStatusCode());
+		} else if(cmtId != commentPayload.getId()) {
+			Assert.fail("wrong id: " + cmtId);
 		} else {
-			Assert.fail(resp.getBody().asPrettyString());
+			Assert.assertTrue(true);
 		}
 	}
 	
@@ -84,13 +86,20 @@ public class CommentTest {
 		
 		JsonPath jp = resp.jsonPath();
 		
-		int cmtId = jp.get("id");
+		int cmtId = jp.getInt("id");
 		
-		if(resp.getStatusCode() == 200 && cmtId == this.commentPayload.getId()) {
-			Assert.assertTrue(true);
-			System.out.println("Success with this as response: \n" + resp.getBody().asPrettyString());
+		if(resp.getStatusCode() != 200) {
+			Assert.fail("Status code = " + resp.getStatusCode());
+		} else if(cmtId != this.commentPayload.getId()) {
+			Assert.fail("wrong id: " + cmtId);
+		} else if(!resp.getBody().asPrettyString().contains(this.commentPayload.getName())) {
+			Assert.fail("Incorrect name = " + jp.get("name"));
+		} else if(!resp.getBody().asPrettyString().contains(this.commentPayload.getEmail())) {
+			Assert.fail("Incorrect name = " + jp.get("email"));
+		} else if(!resp.getBody().asPrettyString().contains(this.commentPayload.getBody())) {
+			Assert.fail("Incorrect name = " + jp.get("body"));
 		} else {
-			Assert.fail(resp.getBody().asPrettyString());
+			Assert.assertTrue(true);
 		}
 	}
 	
