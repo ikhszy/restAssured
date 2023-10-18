@@ -86,10 +86,12 @@ public class PostTest {
 		JsonPath jp = response.jsonPath();
 		
 		int postId = jp.getInt("id");
+		String checker;
+		checker = jp.get("title").toString();
 		
 		if(response.getStatusCode() != 200) {
 			Assert.fail("Status code is wrong: " + response.getStatusCode());
-		} else if(!response.getBody().asPrettyString().contains(this.pPojo.getTitle())) {
+		} else if(!checker.equals(this.pPojo.getTitle())) {
 			Assert.fail(response.getBody().asPrettyString());
 		} else if(postId != this.pPojo.getId()) {
 			Assert.fail("Post ID is wrong: " + postId);
@@ -143,4 +145,70 @@ public class PostTest {
 		}
 	}
 	
+	@Test(priority=8, description="Negative on post with user id 0")
+	public void PST101() {
+		
+		pPojo.setUser_id(0);
+		
+		Response response = Post_endpoints.postPost(pPojo);
+		JsonPath jp = response.jsonPath();
+		
+		String valField = jp.get("[0].field");
+		String valMessage = jp.get("[0].message");
+		
+		if(response.getStatusCode() != 422) {
+			Assert.fail("wrong status code");
+		} else if(!valField.equals("user")) {
+			Assert.fail("field is wrong");
+		} else if(!valMessage.equals("must exist")) {
+			Assert.fail("incorrect message");
+		} else {
+			Assert.assertTrue(true);
+		}
+	}
+	
+	@Test(priority=6, description="Negative on post with empty title")
+	public void PST102() {
+		
+		pPojo.setTitle("");
+		
+		Response response = Post_endpoints.postPost(pPojo);
+		JsonPath jp = response.jsonPath();
+		
+		String valField = jp.get("[0].field");
+		String valMessage = jp.get("[0].message");
+		
+		if(response.getStatusCode() != 422) {
+			Assert.fail("wrong status code");
+		} else if(!valField.equals("title")) {
+			Assert.fail("field is wrong");
+		} else if(!valMessage.equals("can't be blank")) {
+			Assert.fail("incorrect message");
+		} else {
+			Assert.assertTrue(true);
+		}
+	}
+	
+	@Test(priority=7, description="Negative on post with empty body")
+	public void PST103() {
+		
+		pPojo.setTitle(faker.book().title());
+		pPojo.setBody("");
+		
+		Response response = Post_endpoints.postPost(pPojo);
+		JsonPath jp = response.jsonPath();
+		
+		String valField = jp.get("[0].field");
+		String valMessage = jp.get("[0].message");
+		
+		if(response.getStatusCode() != 422) {
+			Assert.fail("wrong status code");
+		} else if(!valField.equals("body")) {
+			Assert.fail("field is wrong");
+		} else if(!valMessage.equals("can't be blank")) {
+			Assert.fail("incorrect message");
+		} else {
+			Assert.assertTrue(true);
+		}
+	}
 }

@@ -1,58 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="api.utilities.ExtentReportManager"/>
-  </listeners>
-  <test thread-count="5" name="goRest.co.in(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="api.test.CommentTest">
         <methods>
-          <include name="CMT005"/>
-          <include name="CMT002"/>
           <include name="CMT004"/>
-          <include name="CMT001"/>
+          <include name="CMT105"/>
           <include name="setup"/>
-          <include name="CMT003"/>
         </methods>
       </class> <!-- api.test.CommentTest -->
-      <class name="api.test.UserTest">
-        <methods>
-          <include name="setup"/>
-          <include name="USR005"/>
-          <include name="USR004"/>
-          <include name="USR007"/>
-          <include name="USR006"/>
-          <include name="USR001"/>
-          <include name="USR003"/>
-          <include name="USR002"/>
-        </methods>
-      </class> <!-- api.test.UserTest -->
-      <class name="api.test.End2end">
-        <methods>
-          <include name="e2e008"/>
-          <include name="e2e004"/>
-          <include name="setup"/>
-          <include name="e2e009"/>
-          <include name="e2e007"/>
-          <include name="e2e005"/>
-          <include name="e2e006"/>
-          <include name="e2e003"/>
-          <include name="e2e001"/>
-          <include name="e2e002"/>
-        </methods>
-      </class> <!-- api.test.End2end -->
-      <class name="api.test.PostTest">
-        <methods>
-          <include name="PST001"/>
-          <include name="PST004"/>
-          <include name="PST002"/>
-          <include name="PST005"/>
-          <include name="setup"/>
-          <include name="PST006"/>
-          <include name="PST003"/>
-        </methods>
-      </class> <!-- api.test.PostTest -->
     </classes>
-  </test> <!-- goRest.co.in(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

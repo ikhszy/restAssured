@@ -103,7 +103,7 @@ public class CommentTest {
 		}
 	}
 	
-	@Test(priority = 5, description="DELETE the session comment")
+	@Test(priority = 100, description="DELETE the session comment")
 	public void CMT004() {
 		
 		int cmtId = this.commentPayload.getId();
@@ -111,11 +111,12 @@ public class CommentTest {
 		Response delResp = Comment_endpoints.deleteCommentById(cmtId);
 		Response getResp = Comment_endpoints.getCommentById(cmtId);
 		
-		if(delResp.getStatusCode() == 204 && getResp.getStatusCode() == 404) {
-			Assert.assertTrue(true);
-			System.out.println("comment Id: " + this.commentPayload.getId() + " successfully deleted");
+		if(delResp.getStatusCode() != 204) {
+			Assert.fail("delete got wrong status code: " + delResp.getStatusCode());
+		} else if(getResp.getStatusCode() != 404) {
+			Assert.fail("get got wrong status code: " + delResp.getStatusCode());
 		} else {
-			Assert.fail(String.valueOf(getResp.getStatusCode()));
+			Assert.assertTrue(true);
 		}
 	}
 	
@@ -128,6 +129,115 @@ public class CommentTest {
 		
 		for(CommentsPojo id : response) {
 			System.out.println("found comment with id: " + id.getId() + " \ntitle: " + id.getBody());
+		}
+	}
+	
+	@Test(priority = 5, description="Negative post comment with empty name")
+	public void CMT101() {
+		commentPayload.setName("");
+		
+		Response resp = Comment_endpoints.postComment(commentPayload);
+		
+		JsonPath jp = resp.jsonPath();
+		String valField = jp.get("[0].field");
+		String valMessage = jp.get("[0].message");
+		
+		if(resp.getStatusCode() != 422) {
+			Assert.fail("wrong status code");
+		} else if(!valField.equals("name")) {
+			Assert.fail("wrong field");
+		} else if(!valMessage.equals("can't be blank")) {
+			Assert.fail("incorrect message");
+		} else {
+			Assert.assertTrue(true);
+		}
+	}
+	
+	@Test(priority = 6, description="Negative post comment with empty email")
+	public void CMT102() {
+		commentPayload.setName(faker.name().firstName());
+		commentPayload.setEmail("");
+		
+		Response resp = Comment_endpoints.postComment(commentPayload);
+		
+		JsonPath jp = resp.jsonPath();
+		String valField = jp.get("[0].field");
+		String valMessage = jp.get("[0].message");
+		
+		if(resp.getStatusCode() != 422) {
+			Assert.fail("wrong status code");
+		} else if(!valField.equals("email")) {
+			Assert.fail("wrong field");
+		} else if(!valMessage.equals("can't be blank, is invalid")) {
+			Assert.fail("incorrect message");
+		} else {
+			Assert.assertTrue(true);
+		}
+	}
+	
+	@Test(priority = 7, description="Negative post comment with invalid email")
+	public void CMT103() {
+		commentPayload.setEmail(faker.pokemon().name());
+		
+		Response resp = Comment_endpoints.postComment(commentPayload);
+		
+		JsonPath jp = resp.jsonPath();
+		String valField = jp.get("[0].field");
+		String valMessage = jp.get("[0].message");
+		
+		if(resp.getStatusCode() != 422) {
+			Assert.fail("wrong status code");
+		} else if(!valField.equals("email")) {
+			Assert.fail("wrong field");
+		} else if(!valMessage.equals("is invalid")) {
+			Assert.fail("incorrect message");
+		} else {
+			Assert.assertTrue(true);
+		}
+	}
+	
+	@Test(priority = 8, description="Negative post comment with empty body")
+	public void CMT104() {
+		commentPayload.setEmail(faker.internet().emailAddress());
+		commentPayload.setBody("");
+		
+		Response resp = Comment_endpoints.postComment(commentPayload);
+		
+		JsonPath jp = resp.jsonPath();
+		String valField = jp.get("[0].field");
+		String valMessage = jp.get("[0].message");
+		
+		if(resp.getStatusCode() != 422) {
+			Assert.fail("wrong status code");
+		} else if(!valField.equals("body")) {
+			Assert.fail("wrong field");
+		} else if(!valMessage.equals("can't be blank")) {
+			Assert.fail("incorrect message");
+		} else {
+			Assert.assertTrue(true);
+		}
+	}
+	
+	@Test(priority = 9, description="Negative post comment with post id not found")
+	public void CMT105() {
+		commentPayload.setBody(faker.lorem().sentence());
+		commentPayload.setPost_id(0);
+		
+		Response resp = Comment_endpoints.postComment(commentPayload);
+		
+		JsonPath jp = resp.jsonPath();
+		String valField = jp.get("[0].field");
+		String valMessage = jp.get("[0].message");
+		
+		if(resp.getStatusCode() != 422) {
+			System.out.println(resp.getBody().asPrettyString());
+			Assert.fail("wrong status code");
+		} else if(!valField.equals("post")) {
+			Assert.fail("wrong field");
+		} else if(!valMessage.equals("must exist")) {
+			Assert.fail("incorrect message");
+		} else {
+			Assert.assertTrue(true);
 		}
 	}
 }
