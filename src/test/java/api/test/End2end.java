@@ -157,10 +157,12 @@ public class End2end {
 		JsonPath jp = response.jsonPath();
 		
 		int postId = jp.getInt("id");
+		String checker;
+		checker = jp.get("title").toString();
 		
 		if(response.getStatusCode() != 200) {
 			Assert.fail("Status code is wrong: " + response.getStatusCode());
-		} else if(!response.getBody().asPrettyString().contains(this.postPayload.getTitle())) {
+		} else if(checker.equals(this.postPayload.getTitle())) {
 			Assert.fail(response.getBody().asPrettyString());
 		} else if(postId != this.postPayload.getId()) {
 			Assert.fail("Post ID is wrong: " + postId);

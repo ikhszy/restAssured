@@ -155,7 +155,7 @@ public class UserTest {
 		}
 	}
 	
-	@Test(priority=7, description="Delete user")
+	@Test(priority=100, description="Delete user")
 	public void USR004() {
 		Response response = User_endpoints.deleteUser(this.userPayload.getId());
 		
@@ -166,4 +166,116 @@ public class UserTest {
 			Assert.fail("status code: " + response.getStatusCode());
 		}
 	}
+	
+	@Test(priority=8, description="Negative name is empty") 
+	public void USR101() {
+		
+		userPayload.setName("");
+		
+		Response response = User_endpoints.postUser(userPayload);
+		
+		JsonPath jp = response.jsonPath();
+		String valField = jp.get("[0].field");
+		String valMessage = jp.get("[0].message");
+		
+		if(response.getStatusCode() != 422) {
+			Assert.fail("wrong status code");
+		} else if(!valField.equals("name")) {
+			Assert.fail("wrong field");
+		} else if(!valMessage.equals("can't be blank")) {
+			Assert.fail("invalid message");
+		} else {
+			Assert.assertTrue(true);
+		}
+	}
+	
+	@Test(priority=9, description="Negative email is empty") 
+	public void USR102() {
+		
+		userPayload.setName(faker.name().firstName());
+		userPayload.setEmail("");
+		
+		Response response = User_endpoints.postUser(userPayload);
+		
+		JsonPath jp = response.jsonPath();
+		String valField = jp.get("[0].field");
+		String valMessage = jp.get("[0].message");
+		
+		if(response.getStatusCode() != 422) {
+			Assert.fail("wrong status code");
+		} else if(!valField.equals("email")) {
+			Assert.fail("wrong field");
+		} else if(!valMessage.equals("can't be blank")) {
+			Assert.fail("invalid message");
+		} else {
+			Assert.assertTrue(true);
+		}
+	}
+	
+	@Test(priority=7, description="Negative email already used") 
+	public void USR103() {
+		
+		Response response = User_endpoints.postUser(userPayload);
+		
+		JsonPath jp = response.jsonPath();
+		String valField = jp.get("[0].field");
+		String valMessage = jp.get("[0].message");
+		
+		if(response.getStatusCode() != 422) {
+			Assert.fail("wrong status code");
+		} else if(!valField.equals("email")) {
+			Assert.fail("wrong field");
+		} else if(!valMessage.equals("has already been taken")) {
+			Assert.fail("invalid message");
+		} else {
+			Assert.assertTrue(true);
+		}
+	}
+	
+	@Test(priority=10, description="Negative gender can't be found") 
+	public void USR104() {
+		
+		userPayload.setGender("maleo");
+		userPayload.setEmail(faker.internet().emailAddress());
+		
+		Response response = User_endpoints.postUser(userPayload);
+		
+		JsonPath jp = response.jsonPath();
+		String valField = jp.get("[0].field");
+		String valMessage = jp.get("[0].message");
+		
+		if(response.getStatusCode() != 422) {
+			Assert.fail("wrong status code");
+		} else if(!valField.equals("gender")) {
+			Assert.fail("wrong field");
+		} else if(!valMessage.equals("can't be blank, can be male of female")) {
+			Assert.fail("invalid message");
+		} else {
+			Assert.assertTrue(true);
+		}
+	}
+	
+	@Test(priority=11, description="Negative status is empty") 
+	public void USR105() {
+		
+		userPayload.setGender("male");
+		userPayload.setStatus("");
+		
+		Response response = User_endpoints.postUser(userPayload);
+		
+		JsonPath jp = response.jsonPath();
+		String valField = jp.get("[0].field");
+		String valMessage = jp.get("[0].message");
+		
+		if(response.getStatusCode() != 422) {
+			Assert.fail("wrong status code");
+		} else if(!valField.equals("status")) {
+			Assert.fail("wrong field");
+		} else if(!valMessage.equals("can't be blank")) {
+			Assert.fail("invalid message");
+		} else {
+			Assert.assertTrue(true);
+		}
+	}
+	
 }
